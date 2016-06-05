@@ -35,7 +35,8 @@ match 'attendances/all' => 'attendances#update_all', :as => :update_all, :via =>
 
   post 'activatestudent' => "adminprofile#activatestudent"
 
-
+  devise_scope :user do get '/users/sign_out' => 'devise/sessions#destroy'
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
