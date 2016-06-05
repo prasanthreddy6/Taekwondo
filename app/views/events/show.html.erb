@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @event.picture.url(:square) %>
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @event.type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<p>
+  <strong>Team manager:</strong>
+  <%= @event.team_manager %>
+</p>
+
+<p>
+  <strong>Team coach:</strong>
+  <%= @event.team_coach %>
+</p>
+
+<p>
+  <strong>Team officials:</strong>
+  <%= @event.team_officials %>
+</p>
+
+<p>
+  <strong>Team positions:</strong>
+  <%= @event.team_positions %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>

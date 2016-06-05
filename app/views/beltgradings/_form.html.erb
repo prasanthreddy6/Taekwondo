@@ -1,0 +1,62 @@
+<div style="padding-left: 20px; padding-top: 60px;">
+<%= form_for(@beltgrading) do |f| %>
+
+  <% if @beltgrading.errors.any? %>
+
+    <div id="error_explanation">
+
+      <h2><%= pluralize(@beltgrading.errors.count, "error") %> prohibited this beltgrading from being saved:</h2>
+
+      <ul>
+
+      <% @beltgrading.errors.full_messages.each do |message| %>
+
+        <li><%= message %></li>
+
+      <% end %>
+
+      </ul>
+
+    </div>
+
+  <% end %>
+  
+  <table>
+
+  <tr class="field">
+  <td><%=f.label :Name %></td>
+  <td>&nbsp&nbsp<%= @beltgrading.user.profile.name %></td>
+  </tr>
+  
+  
+  <%= f.hidden_field :user_id %>
+
+  <tr class="field">
+    <td><%= f.label :status %></td>
+    <td>&nbsp&nbsp<%= f.radio_button :status, 'Pass' %> Pass
+    &nbsp<%= f.radio_button :status, 'Fail' %> Fail </td>
+  </div>
+  <tr><td>&nbsp</td></tr>
+  <tr class="field">
+    <td><%= f.label :Belt_type %></td>
+    <td>&nbsp&nbsp<%= f.text_field :type %></td>
+  </tr>
+  <tr><td>&nbsp</td></tr>
+  <tr class="field">
+    <td><%= f.label :location %></td>
+    <td>&nbsp&nbsp<%= f.text_field :location %></td>
+  </tr>
+  <tr><td>&nbsp</td></tr>
+  <tr class="field">
+    <td><%= f.label :event_date %></td>
+    <td>&nbsp&nbsp<%= f.date_select :event_date %></td>
+  </tr>
+  <tr><td>&nbsp</td></tr>
+  <tr class="actions">
+    <td>&nbsp</td>
+    <td>&nbsp&nbsp<%= f.submit "submit" %></td>
+  </tr>
+
+  </table>
+
+<% end %>

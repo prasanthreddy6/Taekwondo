@@ -1,0 +1,22 @@
+<h1> List of paid students </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>belts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td>no belts</td>
+        <td>&nbsp<%=link_to "add belt", new_beltgrading_path(:user_id => post.id) %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+

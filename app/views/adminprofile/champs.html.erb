@@ -1,0 +1,25 @@
+<div class="container" style="padding-top: 75px; padding-left: 20px;">
+  <h1> You can add championships to students </h1>
+
+<div class="table-responsive" style="padding-top: 20px">
+<table class="table table-hover" style="font-size:20px">
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Belts </th>
+      <th> &nbsp </th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @user.each do |post| %>
+      <tr>
+        <td> <%= post.name %> </td>
+        <td> no belts </td>
+        <td> <%=link_to "Add championships", new_championship_path(:user_id => post.id) %> </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+</div>

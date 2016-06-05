@@ -1,0 +1,89 @@
+<% resource.build_profile if resource.profile.nil? %>
+
+<div style="padding-top: 60px; padding-left: 40px;">
+  <h2>Sign up</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+  <%= devise_error_messages! %>
+  
+  <table>
+
+    <tr class="field">
+      <td><%= f.label :email %></td>
+      <td><%= f.email_field :email, autofocus: true %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+      </td>
+      <td><%= f.password_field :password, autocomplete: "off" %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :password_confirmation %></td>
+      <td><%= f.password_field :password_confirmation, autocomplete: "off" %><td>
+    </tr>
+
+    <tr class="field">
+      <%= f.fields_for :profile do |profile_fields| %>
+      <td><%= profile_fields.label :name %></td>
+      <td><%= profile_fields.text_field :name, autocomplete: "off" %></td>
+    </tr>    
+      
+    <tr class="field">
+      <td><%= profile_fields.label :dob %></td>
+      <td><%= profile_fields.date_select :dob%></td>
+    </tr>
+        
+    <tr class="field">
+      <td><%= profile_fields.label :father_name %></td>
+      <td><%= profile_fields.text_field :father_name, autocomplete: "off" %></td>
+    </tr>
+        
+    <tr class="field">
+      <td><%= profile_fields.label :tfiid %></td>
+      <td><%= profile_fields.text_field :tfiid, autocomplete: "off" %></td>
+    </tr>
+        
+    <tr class="field">
+      <td><%= profile_fields.label :roll_number %></td>
+      <td><%= profile_fields.text_field :roll_number, autocomplete: "off" %></td>
+    </tr>
+       
+    <tr class="field">
+      <td><%= profile_fields.label :address %></td>
+      <td><%= profile_fields.text_field :address, autocomplete: "off" %></td>
+    </tr>
+       
+    <tr class="field">
+      <td><%= profile_fields.label :phone_number %></td>
+      <td><%= profile_fields.text_field :phone_number, autocomplete: "off" %></td>
+    </tr>
+       
+    <tr class="field">
+      <td><%= profile_fields.label :doj %></td>
+      <td><%= profile_fields.date_select :doj%></td>
+    </tr>
+        
+    <tr class="field">
+      <td><%= profile_fields.label :Upload_photo %></td>
+      <td><%= profile_fields.file_field :avatar%></td>
+    </tr>
+    
+    <%end%> 
+    
+    <tr class="actions">
+      <td>&nbsp</td>
+      <td><%= f.submit "Sign up", :class => 'btn btn-primary-ln' %></td>
+    </tr>
+  
+  </table>
+
+<% end %>
+
+</div>
+

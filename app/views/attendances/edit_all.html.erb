@@ -1,0 +1,25 @@
+
+<div style="padding-top: 60px">
+<%= form_for :attendance, :url => update_all_path, :html => { :method => :put } do %>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>E-Mail</th>
+    </tr>
+    <% @attendance.each do |attendance| %>
+      <%= fields_for "attendance[]", attendance do |attendance_fields| %>
+    <tr>
+      <td><%= attendance_fields.text_field :user_id %></td>
+      <td><%= attendance_fields.text_field :present_days %></td>
+      <td><%= attendance_fields.text_field :total_days %></td>
+    </tr>
+      <% end %>
+    <% end %>
+  </table>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+</div>

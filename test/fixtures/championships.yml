@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  weight_category: MyString
+  group: MyString
+  poomsae_paticipation: MyString
+  events: MyString
+  fight_won: MyString
+  fight_played: MyString
+  rewards: MyString
+  medal_g: MyString
+  medal_s: MyString
+  medal_b: MyString
+  medal_n: MyString
+
+two:
+  name: MyString
+  type: 
+  weight_category: MyString
+  group: MyString
+  poomsae_paticipation: MyString
+  events: MyString
+  fight_won: MyString
+  fight_played: MyString
+  rewards: MyString
+  medal_g: MyString
+  medal_s: MyString
+  medal_b: MyString
+  medal_n: MyString

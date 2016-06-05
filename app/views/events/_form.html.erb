@@ -1,0 +1,71 @@
+  <div>
+  <%= form_for(@event) do |f| %>
+    <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <table>
+
+    <tr class="field">
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :type %></td>
+      <td><%= f.select :type, ['Class', 'District','State', 'National' ]%></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :location %></td>
+      <td><%= f.text_field :location %></td>
+    </tr>
+    
+    <tr class="field">
+      <td><%= f.label :event_date %><br></td>
+      <td><%= f.date_select :event_date %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :team_manager %></td>
+      <td><%= f.select :team_manager, Profile.all.collect {|x| [x.name]}, {:include_blank => "Select One" }, { :multiple => true}%></td>
+    </tr>
+
+    <tr class="field">
+    <td><%= f.label :team_coach %></td>
+     <td><%= f.select :team_coach, Profile.all.collect {|x| [x.name]}, {:include_blank => "Select One" }, { :multiple => true}%></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :team_officials %></td>
+      <td><%= f.select :team_officials, Profile.all.collect {|x| [x.name]}, {:include_blank => "Select One" }, { :multiple => true}%></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :team_positions %></td>
+      <td><%= f.number_field :team_positions %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :Upload_photo %></td>
+      <td><%= f.file_field :picture %></td>
+    </tr>
+    
+    <tr class="actions">
+      <td>&nbsp</td>
+      <td><%= f.submit "Create event", :class => 'btn btn-primary-ln' %></td>
+      <td><%= link_to 'Back', events_path %></td>
+    </tr>
+
+    <% end %>
+
+    </table>
+
+</div>

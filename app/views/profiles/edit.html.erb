@@ -1,0 +1,64 @@
+
+<div style="padding-left: 10px; padding-top: 60px">
+<h1> update profile details</h1>
+<%= form_for @user do |f| %>
+
+ <table>
+  
+
+	<tr> 
+		<td><%= f.label :name %></td>
+		<td>&nbsp<%= f.text_field :name %></td>
+	</tr>
+	
+	<tr><td>&nbsp</td></tr>
+
+	<tr> 
+		<td><%= f.label :dob %></td>
+		<td>&nbsp<%= f.text_field :dob %></td>
+	</tr>
+
+	<tr><td>&nbsp</td></tr>
+	
+	<tr> 
+		<td><%= f.label :father_name %></td>
+		<td>&nbsp<%= f.text_field :father_name %></td>
+	</tr>
+	
+	<tr><td>&nbsp</td></tr>
+
+	<tr> 
+		<td><%= f.label :address %></td>
+		<td>&nbsp<%= f.text_field :address %></td>
+	</tr>
+	
+	<tr><td>&nbsp</td></tr>
+
+	<tr> 
+		<td><%= f.label :phone_number %></td>
+		<td>&nbsp<%= f.text_field :phone_number %></td>
+	</tr>
+	
+	<tr><td>&nbsp</td></tr>
+
+	<tr> 
+		<td><%= f.label :doj %></td>
+		<td>&nbsp<%= f.date_select :doj %></td>
+	</tr>
+	
+	<tr><td>&nbsp</td></tr>
+
+	<tr class="field">
+    	<td><%= f.label :Upload_photo %></td>
+    	<td><%= f.file_field :avatar %></td>
+	</tr>
+
+	<tr><td>&nbsp</td></tr>
+
+    <tr>
+    	<td><%= f.submit "update" %></td>
+    </tr>
+ </table>
+    <% end %>
+
+</div>

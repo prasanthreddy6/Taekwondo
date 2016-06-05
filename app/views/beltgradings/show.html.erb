@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @beltgrading.status %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @beltgrading.type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @beltgrading.location %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @beltgrading.event_date %>
+</p>
+
+<%= link_to 'Edit', edit_beltgrading_path(@beltgrading) %> |
+<%= link_to 'Back', beltgradings_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>

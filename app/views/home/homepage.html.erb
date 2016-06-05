@@ -1,0 +1,74 @@
+<!-- Carousel -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  
+
+  <div class="carousel-inner"  role="listbox">
+
+      <div class="item active">
+        <a href="http://localhost:3000/events/1">
+          <img src="/chevy.jpg" style="width:100%; height:300px;" class="img-responsive">
+        </a> 
+      <div class="container">
+        <div class="carousel-caption">
+          <h1> Welcome to Taekwondo Institute Indra nagar</h1>
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+        <a href="http://localhost:3000/events/1">
+          <img src="/chevy.jpg" style="width:100%; height:300px;" class="img-responsive">
+        </a> 
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Changes to the Grid</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="item">
+        <a href="http://localhost:3000/events/1">
+          <img src="/chevy.jpg" style="width:100%; height:300px;" class="img-responsive">
+        </a> 
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Changes to the Grid</h1>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+<!-- /.carousel -->
+
+<div class="container" style="padding-top:10px">
+<h1>Recent Championships</h1>
+   <% @championship.all.order("created_at DESC").limit(5).each do |d| %>
+      <%= link_to ( image_tag d.pic.url(:square) ), {:controller => 'championships' , :action => 'show', :id => d.id} %>
+    <%end%>
+</div>
+
+<div class="container" style="padding-top:10px">
+<h1>Recent Gold Medalist</h1>
+   <% @champ.all.order("created_at DESC").limit(5).each do |d| %>
+      <%= link_to ( image_tag d.user.profile.avatar.url(:square) ), {:controller => 'championships' , :action => 'show', :id => d.id} %>
+    <%end%>
+   
+<%= link_to "Change your password", edit_user_registration_path %> &nbsp &nbsp<%= link_to "view profile", profiles_profileview_path %>
+<!--<iframe width="420" height="315" src="http://www.youtube.com/embed/xLBZ1_J1xvM" frameborder="0" allowfullscreen></iframe>--><br><br><br><br>
+</div>

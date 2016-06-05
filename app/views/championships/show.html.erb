@@ -1,0 +1,73 @@
+
+<div style="padding-left: 20px;padding-top: 60px">
+<p id="notice"><%= notice %></p>
+<%= image_tag @championship.pic.url(:square) %>
+<p>
+  <strong>Name:</strong>
+  <%= @championship.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @championship.type %>
+</p>
+
+<p>
+  <strong>Weight category:</strong>
+  <%= @championship.weight_category %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @championship.group %>
+</p>
+
+<p>
+  <strong>Poomsae paticipation:</strong>
+  <%= @championship.poomsae_paticipation %>
+</p>
+
+<p>
+  <strong>Events:</strong>
+  <%= @championship.events %>
+</p>
+
+<p>
+  <strong>Fight won:</strong>
+  <%= @championship.fight_won %>
+</p>
+
+<p>
+  <strong>Fight played:</strong>
+  <%= @championship.fight_played %>
+</p>
+
+<p>
+  <strong>Rewards:</strong>
+  <%= @championship.rewards %>
+</p>
+
+<p>
+  <strong>Medal g:</strong>
+  <%= @championship.medal_g %>
+</p>
+
+<p>
+  <strong>Medal s:</strong>
+  <%= @championship.medal_s %>
+</p>
+
+<p>
+  <strong>Medal b:</strong>
+  <%= @championship.medal_b %>
+</p>
+
+<p>
+  <strong>Medal n:</strong>
+  <%= @championship.medal_n %>
+</p>
+
+<%= link_to 'Edit', edit_championship_path(@championship) %> |
+<%= link_to 'Back', championships_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>
+</div>

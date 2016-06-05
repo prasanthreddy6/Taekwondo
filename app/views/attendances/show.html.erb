@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Present days:</strong>
+  <%= @attendance.present_days %>
+</p>
+
+<p>
+  <strong>Total days:</strong>
+  <%= @attendance.total_days %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<%= link_to 'Back', attendances_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>

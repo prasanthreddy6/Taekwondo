@@ -1,0 +1,55 @@
+
+<div style="padding-left: 20px;padding-top: 60px">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Championships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Weight category</th>
+      <th>Group</th>
+      <th>Poomsae paticipation</th>
+      <th>Events</th>
+      <th>Fight_won</th>
+      <th>Fight_played</th>
+      <th>Rewards</th>
+      <th>Medal_g</th>
+      <th>Medal_s</th>
+      <th>Medal_b</th>
+      <th>Medal_n</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @championships.each do |championship| %>
+      <tr>
+        <td><%= championship.name %></td>
+        <td><%= championship.type %></td>
+        <td><%= championship.weight_category %></td>
+        <td><%= championship.group %></td>
+        <td><%= championship.poomsae_paticipation %></td>
+        <td><%= championship.events %></td>
+        <td><%= championship.fight_won %></td>
+        <td><%= championship.fight_played %></td>
+        <td><%= championship.rewards %></td>
+        <td><%= championship.medal_g %></td>
+        <td><%= championship.medal_s %></td>
+        <td><%= championship.medal_b %></td>
+        <td><%= championship.medal_n %></td>
+        <td><%= link_to 'Show', championship %></td>
+        <td><%= link_to 'Edit', edit_championship_path(championship) %></td>
+        <td><%= link_to 'Destroy', championship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Championship', new_championship_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>
+</div>

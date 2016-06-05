@@ -1,0 +1,29 @@
+<h1> List of registered students </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>email_id  </th>
+      <th>phone_number </th>
+      <th>status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.each do |post| %>
+      <tr>
+        <td><%= post.profile.name %></td>
+        <td><%= post.email %></td>
+        <td><%= post.profile.phone_number %></td>
+        <% if post.profile.status == nil %>
+        <td><%= button_to 'active', {:controller => 'adminprofile' , :action => 'activatestudent', :method => :PUT, :id => post.id}%>
+        <% else %>
+        <td>active</td>
+        <% end %>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+

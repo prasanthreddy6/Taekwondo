@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beltgradings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Location</th>
+      <th>Event_date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beltgradings.each do |beltgrading| %>
+      <tr>
+        <td><%= beltgrading.user.profile.name %></td>
+        <td><%= beltgrading.status %></td>
+        <td><%= beltgrading.type %></td>
+        <td><%= beltgrading.location %></td>
+        <td><%= beltgrading.event_date %></td>
+        <td><%= link_to 'Show', beltgrading %></td>
+        <td><%= link_to 'Edit', edit_beltgrading_path(beltgrading) %></td>
+        <td><%= link_to 'Destroy', beltgrading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beltgrading', new_beltgrading_path %>
+</br><%= link_to 'back to dashboard', adminprofile_profile_path %>
