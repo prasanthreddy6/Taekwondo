@@ -1,6 +1,8 @@
-<h1> List of registered students </h1>
+<center>
+<div style="padding-top: 40px"><h1> List of registered students </h1></div>
 
-<table>
+<div class="table-responsive" style="padding-top: 20px">
+<table class="table table-hover" style="font-size:20px; width:800px">
   <thead>
     <tr>
       <th>Student Name</th>
@@ -18,12 +20,14 @@
         <td><%= post.email %></td>
         <td><%= post.profile.phone_number %></td>
         <% if post.profile.status == nil %>
-        <td><%= button_to 'active', {:controller => 'adminprofile' , :action => 'activatestudent', :method => :PUT, :id => post.id}%>
+        <td><%= button_to 'active', {:controller => 'adminprofile' , :action => 'activatestudent', :method => :PUT, :id => post.id}, 
+        :class => 'btn btn-primary-ln' %></td>
         <% else %>
-        <td>active</td>
+        <td>&nbsp;&nbsp; active </td>
         <% end %>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>
-
+</div>
+</center>

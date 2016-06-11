@@ -139,8 +139,7 @@ ul {
 }
 
 body {
-  padding-top:50px;
-  font: 'Times New Roman';;
+
   background: #F1F7FA;
 }
 
@@ -153,3 +152,11 @@ body {
 tr td:first-child {padding-left:0px;}
 
 td {padding:10px 0px 10px 50px;}
+
+/* height and color for navigation bar*/
+.navHt{
+
+  height : 30px;
+  background : #2B2B2B;
+
+}

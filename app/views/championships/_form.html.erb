@@ -1,139 +1,99 @@
-
-<div style="padding-left:20px;">
+<div style="padding-left:20px; padding-top: 20px;">
 
 <%= form_for(@championship) do |f| %>
 
   <% if @championship.errors.any? %>
-
     <div id="error_explanation">
-
       <h2><%= pluralize(@championship.errors.count, "error") %> prohibited this championship from being saved:</h2>
-
       <ul>
-
       <% @championship.errors.full_messages.each do |message| %>
-
         <li><%= message %></li>
-
       <% end %>
-
       </ul>
-
     </div>
-
   <% end %>
 
   <table>
 
-  <%= f.hidden_field :user_id %>
-
-  <tr class="field">
-    <td><%= f.label :name %></td>
-    <td><%= f.text_field :name, :value => @championship.user.profile.name %></td>
-  </tr>
-  
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :type %></td>
-    <td><%= f.select :type, ['Class', 'District','State', 'National' ]%></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :weight_category %></td>
-    <td><%= f.text_field :weight_category %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :group %></td>
-    <td><%= f.text_field :group %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :poomsae_paticipation %></td>
-    <td><%= f.select :poomsae_paticipation, ['Group', 'Individual', 'Both']%></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :events %></td>
-    <td><%= f.text_field :events %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :fight_won %></td>
-    <td><%= f.text_field :fight_won %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :fight_played %></td>
-    <td><%= f.text_field :fight_played %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :rewards %></td>
-    <td><%= f.text_field :rewards %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :medal_g %></td>
-    <td><%= f.text_field :medal_g %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :medal_s %></td>
-    <td><%= f.text_field :medal_s %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :medal_b %></td>
-    <td><%= f.text_field :medal_b %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
-  <tr class="field">
-    <td><%= f.label :medal_n %></td>
-    <td><%= f.text_field :medal_n %></td>
-  </tr>
-
-  <tr><td>&nbsp</td></tr>
-
+    <%= f.hidden_field :user_id %>
 
     <tr class="field">
-    <td><%= f.label :Upload_photo %></td>
-    <td><%= f.file_field :pic %></td>
-  </tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name, :value => @championship.user.profile.name %></td>
+    </tr>
+    
+    <tr class="field">
+      <td><%= f.label :type %></td>
+      <td><%= f.select :type, ['Class', 'District','State', 'National' ]%></td>
+    </tr>
 
+    <tr class="field">
+      <td><%= f.label :weight_category %></td>
+      <td><%= f.text_field :weight_category %></td>
+    </tr>
 
-  <tr class="actions">
-    <td>&nbsp</td>  
-    <td><%= f.submit %></td>
-  </tr>
+    <tr class="field">
+      <td><%= f.label :group %></td>
+      <td><%= f.text_field :group %></td>
+    </tr>
 
-  
+    <tr class="field">
+      <td><%= f.label :poomsae_paticipation %></td>
+      <td><%= f.select :poomsae_paticipation, ['Group', 'Individual', 'Both']%></td>
+    </tr>
 
-<% end %>
+    <tr class="field">
+      <td><%= f.label :events %></td>
+      <td><%= f.text_field :events %></td>
+    </tr>
 
-</table>
+    <tr class="field">
+      <td><%= f.label :fight_won %></td>
+      <td><%= f.text_field :fight_won %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :fight_played %></td>
+      <td><%= f.text_field :fight_played %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :rewards %></td>
+      <td><%= f.text_field :rewards %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :medal_g %></td>
+      <td><%= f.text_field :medal_g %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :medal_s %></td>
+      <td><%= f.text_field :medal_s %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :medal_b %></td>
+      <td><%= f.text_field :medal_b %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :medal_n %></td>
+      <td><%= f.text_field :medal_n %></td>
+    </tr>
+
+    <tr class="field">
+      <td><%= f.label :Upload_photo %></td>
+      <td><%= f.file_field :pic %></td>
+    </tr>
+
+    <tr class="actions">
+      <td></td>  
+      <td><%= f.submit  "Create", :class => 'btn btn-primary-ln' %></td>
+    </tr>
+
+    <% end %>
+
+  </table>
 
 </div>
