@@ -1,1 +1,3 @@
-$('.carousel').carousel();
+<script type="text/javascript">
+$('.carousel').carousel
+</script>
